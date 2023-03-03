@@ -69,6 +69,8 @@ Python time.time() or Timer Threads.
 5. Handle connectionID 30-second timeouts properly and gracefully exit the
    server if there have been no requests in two minutes.
 
+***
+
 # References
 * [Socket Programming in Python](https://realpython.com/python-sockets/)
 * [UDP - Client And Server Example](https://pythontic.com/modules/socket/udp-client-server-example)
