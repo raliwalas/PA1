@@ -5,7 +5,7 @@ Client program has (4) arguments: HELLO [server IP] [server port#] [4-digit conn
 
 Example client usage:
 ```
-	$ python3 UDP_client.py HELLO 192.168.0.15 20009 8877
+  $ python3 UDP_client.py HELLO 192.168.0.15 20009 8877
 ```
 The server listens on a port and waits for client connections.
 
@@ -19,7 +19,7 @@ The OK message starts with the string OK and echoes back the
 connectionID. Also, the server returns client IP and client PORT 
 number:
 ```
-         OK [ConnectionID] [Client_IP] [Client_Port]
+  OK [ConnectionID] [Client_IP] [Client_Port]
 ```
 
 For example, if the client IP address is 192.168.0.10, the client port
