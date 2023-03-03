@@ -2,7 +2,7 @@ import socket
 
 if __name__ == "__main__":
     host = "127.0.0.1"
-    port = 4455
+    port = 20009
 
     """ Creating the UDP socket """
     server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

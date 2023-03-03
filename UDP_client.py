@@ -8,14 +8,13 @@ if n != 4:
     print("USAGE: ./UDP_client.py HELLO [serverIP] [server port] [connectionID]\n")
 quit()
 
-
 # Arguments passed
 print("\nName of Python script:", sys.argv[0])
 
 
 if __name__ == "__main__":
     host = "127.0.0.1"
-    port = 4455
+    port = 20009
     addr = (host, port)
 
     """ Creating the UDP socket """
