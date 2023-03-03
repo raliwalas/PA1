@@ -26,7 +26,7 @@ For example, if the client IP address is 192.168.0.10, the client port
 is 12345, and the connectionID is 9876, the return message from the server
 to the client would be 
 ```
-	OK 9876 192.168.0.10 12345
+  OK 9876 192.168.0.10 12345
 ```
 
 ### 2. ERROR
@@ -42,7 +42,7 @@ To sum up, the server message is "RESET ConnectionID". For example, if
 the client IP address is 192.168.0.10, the client port is 12345, and the 
 connection ID is 9876, the return message from the server would be:
 ```
-	RESET 9876
+  RESET 9876
 ```
 
 ## Timeouts
