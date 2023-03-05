@@ -1,6 +1,6 @@
 # PA1
 
-## Setup
+## Preliminaries
 * go over IP things
   * why does localhost/127.0.0.1 exist?
   * socket address = IP:portno
@@ -12,6 +12,10 @@
 * how to `tmux` (for sharing terminal, keep sessions alive)
   * after ssh'ing in, run `tmux attach` to attach to an existing session
   * `CTRL-B d` to dettach
+
+## Using netcat to test a network connection
+* `nc server port`
+* `nc 127.0.0.1 20009`
 
 ## Protocol
 Client program has (4) arguments: HELLO [server IP] [server port#] 

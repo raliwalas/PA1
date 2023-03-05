@@ -6,35 +6,31 @@ import socket   # for network stuff
 # verify that (4) command line arguments have been passed
 n = len(sys.argv)
 if n != 5:
-    print(f"***ERROR*** You passed " + repr(n-1) + ' arguments. You must pass 4 arguments dood.')
+    print(f"ERROR: You passed " + repr(n-1) + ' arguments. You must pass 4 arguments dood.')
     print("USAGE: ./UDP_client.py HELLO [serverIP] [server port] [connectionID]")
-quit()
+    quit()
 
-# Arguments passed
-print("\nName of Python script:", sys.argv[0])
+# show arguments passed
+print("--------------------------------")
+print("script name:	", sys.argv[0])
+print("String:		", sys.argv[1])
+print("server IP:	", sys.argv[2])
+print("server port:	", sys.argv[3])
+print("connectionID:	", sys.argv[4])
+print("--------------------------------")
 
-if __name__ == "__main__":
-    host = "127.0.0.1"
-    port = 20009
-    addr = (host, port)
+msgFromClient     = sys.argv[1]
+bytesToSend       = str.encode(msgFromClient)
+serverAddressPort = (sys.argv[2], int(sys.argv[3]))	### note string to int conversion
+bufferSize        = 1024
 
-    """ Creating the UDP socket """
-    client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# create UDP socket
+UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
-    while True:
-        data = input("Enter a word: ")
+# Send to server using created UDP socket
+UDPClientSocket.sendto(bytesToSend, serverAddressPort)
 
-        if data == "!EXIT":
-            data = data.encode("utf-8")
-            client.sendto(data, addr)
+msgFromServer = UDPClientSocket.recvfrom(bufferSize)
 
-            print("Disconneted from the server.")
-            break
-
-        data = data.encode("utf-8")
-        client.sendto(data, addr)
-
-        data, addr = client.recvfrom(1024)
-        data = data.decode("utf-8")
-        print(f"Server: {data}")
-
+msg = "Message from Server {}".format(msgFromServer[0])
+print(msg)
