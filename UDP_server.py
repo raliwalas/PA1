@@ -1,29 +1,18 @@
 #!/usr/bin/python
+
 import socket
 
-if __name__ == "__main__":
-    #host = "127.0.0.1"
-    port = 20009
+serverPort = 12000
+serverSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-    # Creating the UDP socket
-    server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# listens on all interfaces
+# can listen on just one by specifying the IP in the first argument
+serverSocket.bind(('', serverPort))
 
-    # Bind the host address with the port ("" indicates listen on all interfaces)
-    #server.bind((host, port))
-    server.bind(("", port))
+print("The server is ready to receive.")
 
-    while True:
-        data, addr = server.recvfrom(1024)
-        data = data.decode("utf-8")
-        print(data)
-
-        if data == "!EXIT":
-            print("Client disconnected.")
-            break
-
-        print(f"Client: {data}")
-
-        data = data.upper()
-        data = data.encode("utf-8")
-        server.sendto(data, addr)
+while True:
+	message, clientAddress = serverSocket.recvfrom(2048)
+	modifiedMessage = message.decode().upper()
+	serverSocket.sendto(modifiedMessage.encode(), clientAddress)
 

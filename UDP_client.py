@@ -5,10 +5,10 @@ import socket   # for network stuff
 
 # verify that (4) command line arguments have been passed
 n = len(sys.argv)
-if n != 5:
-    print(f"ERROR: You passed " + repr(n-1) + ' arguments. You must pass 4 arguments dood.')
-    print("USAGE: ./UDP_client.py HELLO [serverIP] [server port] [connectionID]")
-    quit()
+if (n != 5):
+	print("ERROR: You passed " + repr(n-1) + ' arguments. You must pass 4 arguments.')
+	print("USAGE: ./UDP_client.py HELLO [serverIP] [server port] [connectionID]")
+	quit()
 
 # show arguments passed
 print("--------------------------------")
@@ -18,6 +18,17 @@ print("server IP:	", sys.argv[2])
 print("server port:	", sys.argv[3])
 print("connectionID:	", sys.argv[4])
 print("--------------------------------")
+
+# verify string is HELLO
+if (sys.argv[1] != "HELLO"):
+	print("ERROR: String did not equal HELLO")
+	quit()
+
+# verify connect ID is 4 numeric digits
+connID = sys.argv[4]
+if (len(connID) != 4 or not connID.isdigit()):
+        print("Connection ID is not 4 numeric digits, goodbye")
+        quit()
 
 msgFromClient     = sys.argv[1]
 bytesToSend       = str.encode(msgFromClient)
