@@ -1,16 +1,17 @@
+#!/usr/bin/python
+
 import sys      # for command line arg stuff
 import socket   # for network stuff
 
 # verify that (4) command line arguments have been passed
 n = len(sys.argv)
-if n != 4:
-    print(f"\nFound " + repr(n) + ' arguments. You must pass (4) arguments.')
-    print("USAGE: ./UDP_client.py HELLO [serverIP] [server port] [connectionID]\n")
+if n != 5:
+    print(f"***ERROR*** You passed " + repr(n-1) + ' arguments. You must pass 4 arguments dood.')
+    print("USAGE: ./UDP_client.py HELLO [serverIP] [server port] [connectionID]")
 quit()
 
 # Arguments passed
 print("\nName of Python script:", sys.argv[0])
-
 
 if __name__ == "__main__":
     host = "127.0.0.1"

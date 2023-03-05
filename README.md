@@ -1,6 +1,11 @@
 # PA1
 
 ## Setup
+* go over IP things
+  * why does localhost/127.0.0.1 exist?
+  * socket address = IP:portno
+  * servers listen on an IP and a port number
+  * clients connect from their IP and a random "high numbered" port number (>1023)
 * git repo (use azure host for now)
 * download ssh private key to `~/.ssh`
 * set up `myvm` alias 
