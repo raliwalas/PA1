@@ -3,7 +3,9 @@
 ## Setup
 * git things
   * use the azure host (for now)
-* how to `tmux`
+* how to `tmux` (for sharing terminal, keep sessions alive)
+  * after ssh'ing in, run `tmux attach` to attach to an existing session
+  * `CTRL-B d` to dettach
 
 ## Protocol
 Client program has (4) arguments: HELLO [server IP] [server port#] 
