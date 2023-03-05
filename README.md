@@ -1,5 +1,10 @@
 # PA1
 
+## Setup
+* git things
+  * use the azure host (for now)
+* how to `tmux`
+
 ## Protocol
 Client program has (4) arguments: HELLO [server IP] [server port#] 
 [4-digit connectionID]
@@ -74,4 +79,5 @@ Python time.time() or Timer Threads.
 # References
 * [Socket Programming in Python](https://realpython.com/python-sockets/)
 * [UDP - Client And Server Example](https://pythontic.com/modules/socket/udp-client-server-example)
+* [read data from socket](https://stackoverflow.com/questions/43414057/reading-data-from-a-python-socket-received-from-multiple-clients)
 

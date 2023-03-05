@@ -1,14 +1,15 @@
 import socket
 
 if __name__ == "__main__":
-    host = "127.0.0.1"
+    #host = "127.0.0.1"
     port = 20009
 
-    """ Creating the UDP socket """
+    # Creating the UDP socket
     server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-    """ Bind the host address with the port """
-    server.bind((host, port))
+    # Bind the host address with the port ("" indicates listen on all interfaces)
+    #server.bind((host, port))
+    server.bind(("", port))
 
     while True:
         data, addr = server.recvfrom(1024)
