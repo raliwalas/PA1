@@ -1,8 +1,9 @@
 # PA1
 
 ## Setup
-* git things
-  * use the azure host (for now)
+* git repo (use azure host for now)
+* download ssh private key to `~/.ssh`
+* set up `myvm` alias 
 * how to `tmux` (for sharing terminal, keep sessions alive)
   * after ssh'ing in, run `tmux attach` to attach to an existing session
   * `CTRL-B d` to dettach
